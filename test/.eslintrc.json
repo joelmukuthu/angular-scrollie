@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "describe": true,
+        "it": true,
+        "expect": true,
+        "inject": true,
+        "sinon": true,
+        "weknowhow": true
+    }
+}
