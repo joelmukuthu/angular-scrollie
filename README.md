@@ -32,26 +32,33 @@ services etc. Example usage in a controller:
 app.controller('MyController', [ '$scope', 'scrollie', function ($scope, scrollie) {
     var target = angular.element('#someElement');
     // To set scrollTop without animation
-    scrollie.to(element, 10);
+    scrollie.to(element, 10).then(function () {
+        console.log('Called in next tick');
+    });
     // For animated scrolling in 400ms using easeInOutQuad easing
-    scrollie.to(element, 10, 400);
+    scrollie.to(element, 10, 400).then(function () {
+        console.log('Called after 400ms');
+    });
     // To stop a currently running animation:
-    scrollie.stop(element, 10, 400);
+    scrollie.stop(element);
 }]);
 ```
 
 ### API
 #### scrollie.to(element, scrollTop [, duration [, easing]]) : Promise
-Animates the scrollTop of `element` from it's current `scrollTop` to the new `scrollTop` in a time-frame of `duration` and using the provided `easing`
+Animates the scrollTop of `element` from it's current `scrollTop` to the new
+`scrollTop` in a time-frame of `duration` and using the provided `easing`
 function (`duration` and `easing` are optional).
-
-If `duration` is not provided or is not valid, then it sets the `scrollTop` without animating.
-
-If no `easing` is provided and `duration` is provided then the default easing
-function used is `easeInOutQuad`.
 
 It returns a `$q` promise object which is resolved when the animation is
 complete and is rejected if the animation is stopped.
+
+If `duration` is not provided or is not valid, then it sets the `scrollTop`
+without animating. Note that a promise is still returned but it gets fulfilled
+in the next tick.
+
+If no `easing` is provided and `duration` is provided then the default easing
+function used is `easeInOutQuad`.
 
 Calling `scrollie.to` on an element while an animation is currently ongoing will
 stop that animation and start a new one. Subsequently, the promise for that
