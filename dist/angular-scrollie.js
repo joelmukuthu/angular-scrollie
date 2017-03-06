@@ -1,9 +1,9 @@
 /**
  * angular-scrollie
- * Version: 1.1.0
+ * Version: 1.1.1
  * (c) 2016-2017 Joel Mukuthu
  * MIT License
- * Built on: 06-03-2017 12:03:48 GMT+0100
+ * Built on: 06-03-2017 12:11:30 GMT+0100
  **/
 
 if (typeof exports === 'object') {
