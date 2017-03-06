@@ -1,8 +1,13 @@
 // this is built upon http://stackoverflow.com/a/16136789/1004406
-angular
-.module('scrollie')
-.factory('scrollie', ['$q', 'requestAnimation', 'cancelAnimation',
-    function ($q, requestAnimation, cancelAnimation) {
+angular.module('scrollie').factory('scrollie', [
+    '$q',
+    'requestAnimation',
+    'cancelAnimation',
+    function (
+        $q,
+        requestAnimation,
+        cancelAnimation
+    ) {
         function easeInOutQuad(time, start, change, duration) {
             time /= duration / 2;
             if (time < 1) {

@@ -23,8 +23,13 @@
 
     angular
     .module('scrollie')
-    .factory('requestAnimation', ['$timeout', '$window',
-        function ($timeout, $window) {
+    .factory('requestAnimation', [
+        '$timeout',
+        '$window',
+        function (
+            $timeout,
+            $window
+        ) {
             var lastTime,
                 requestAnimation = $window.requestAnimationFrame ||
                     getWithVendorPrefix('RequestAnimationFrame', $window);
@@ -42,8 +47,13 @@
             return requestAnimation;
         }
     ])
-    .factory('cancelAnimation', ['$timeout', '$window',
-        function ($timeout, $window) {
+    .factory('cancelAnimation', [
+        '$timeout',
+        '$window',
+        function (
+            $timeout,
+            $window
+        ) {
             var cancelAnimation = $window.cancelAnimationFrame ||
                 getWithVendorPrefix('CancelAnimationFrame', $window) ||
                 getWithVendorPrefix('CancelRequestAnimationFrame', $window);
