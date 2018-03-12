@@ -42,7 +42,7 @@ describe('Service: scrollie', function () {
         beforeEach(function () {
             // create a mock requestAnimation that calls the animation function
             // syncronously
-            sinon.stub(mocks, 'requestAnimation', function (animate) {
+            sinon.stub(mocks, 'requestAnimation').callsFake(function (animate) {
                 animate();
             });
         });
@@ -188,10 +188,10 @@ describe('Service: scrollie', function () {
         var $timeout;
 
         beforeEach(function () {
-            sinon.stub(mocks, 'requestAnimation', function (animate, delay) {
+            sinon.stub(mocks, 'requestAnimation').callsFake(function (animate, delay) {
                 return $timeout(animate, delay);
             });
-            sinon.stub(mocks, 'cancelAnimation', function (timeout) {
+            sinon.stub(mocks, 'cancelAnimation').callsFake(function (timeout) {
                 return $timeout.cancel(timeout);
             });
         });
