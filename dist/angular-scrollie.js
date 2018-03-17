@@ -36,49 +36,49 @@ angular.module('scrollie', []);
     }
 
     angular
-    .module('scrollie')
-    .factory('requestAnimation', [
-        '$timeout',
-        '$window',
-        function (
-            $timeout,
-            $window
-        ) {
-            var lastTime,
-                requestAnimation = $window.requestAnimationFrame ||
+        .module('scrollie')
+        .factory('requestAnimation', [
+            '$timeout',
+            '$window',
+            function (
+                $timeout,
+                $window
+            ) {
+                var lastTime,
+                    requestAnimation = $window.requestAnimationFrame ||
                     getWithVendorPrefix('RequestAnimationFrame', $window);
 
-            if (!requestAnimation || iOS6($window)) { // iOS6 is buggy
-                requestAnimation = function (callback) {
-                    var now = Date.now();
-                    var nextTime = Math.max(lastTime + 16, now);
-                    return $timeout(function () {
-                        callback(lastTime = nextTime);
-                    }, nextTime - now);
-                };
-            }
+                if (!requestAnimation || iOS6($window)) { // iOS6 is buggy
+                    requestAnimation = function (callback) {
+                        var now = Date.now();
+                        var nextTime = Math.max(lastTime + 16, now);
+                        return $timeout(function () {
+                            callback(lastTime = nextTime);
+                        }, nextTime - now);
+                    };
+                }
 
-            return requestAnimation;
-        }
-    ])
-    .factory('cancelAnimation', [
-        '$timeout',
-        '$window',
-        function (
-            $timeout,
-            $window
-        ) {
-            var cancelAnimation = $window.cancelAnimationFrame ||
+                return requestAnimation;
+            }
+        ])
+        .factory('cancelAnimation', [
+            '$timeout',
+            '$window',
+            function (
+                $timeout,
+                $window
+            ) {
+                var cancelAnimation = $window.cancelAnimationFrame ||
                 getWithVendorPrefix('CancelAnimationFrame', $window) ||
                 getWithVendorPrefix('CancelRequestAnimationFrame', $window);
 
-            if (!cancelAnimation || iOS6($window)) { // iOS6 is buggy
-                cancelAnimation = $timeout.cancel;
-            }
+                if (!cancelAnimation || iOS6($window)) { // iOS6 is buggy
+                    cancelAnimation = $timeout.cancel;
+                }
 
-            return cancelAnimation;
-        }
-    ]);
+                return cancelAnimation;
+            }
+        ]);
 })();
 
 // this is built upon http://stackoverflow.com/a/16136789/1004406
