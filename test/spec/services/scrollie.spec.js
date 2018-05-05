@@ -254,8 +254,8 @@ describe('Service: scrollie', function () {
             $rootScope.$apply();
             expect(rejected, 'was called');
             expect(mocks.cancelAnimation, 'was called');
-            rejected.reset();
-            mocks.cancelAnimation.reset();
+            rejected.resetHistory();
+            mocks.cancelAnimation.resetHistory();
             scrollie.stop(element);
             $rootScope.$apply();
             expect(rejected, 'was not called');
