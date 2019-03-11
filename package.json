@@ -17,7 +17,7 @@
   "author": "Joel Mukuthu <joelmukuthu@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "angular-mocks": "^1.2.24",
+    "angular-mocks": "^1.7.8",
     "eslint": "^5.0.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^2.0.0",
