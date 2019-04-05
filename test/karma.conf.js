@@ -10,14 +10,16 @@ if (process.env.TRAVIS) {
     reporters.push('coveralls');
 }
 
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = function (config) {
     config.set({
-        browsers: [ 'PhantomJS' ],
+        browsers: [ 'ChromeHeadless' ],
         plugins: [
             'karma-mocha',
             'karma-coverage',
             'karma-coveralls',
-            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
             'karma-mocha-reporter'
         ],
         frameworks: [ 'mocha' ],
