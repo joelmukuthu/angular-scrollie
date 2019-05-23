@@ -30,7 +30,7 @@
     "karma-coveralls": "^2.0.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.5",
-    "load-grunt-tasks": "^4.0.0",
+    "load-grunt-tasks": "^5.0.0",
     "mocha": "^6.0.0",
     "puppeteer": "^1.14.0",
     "sinon": "^7.2.4",
