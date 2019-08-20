@@ -26,7 +26,7 @@
     "grunt-release-it": "^1.0.1",
     "karma": "^4.0.1",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.0.0",
+    "karma-coverage": "^2.0.1",
     "karma-coveralls": "^2.0.0",
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.5",
