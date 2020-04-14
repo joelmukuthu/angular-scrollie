@@ -3,6 +3,12 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/joelmukuthu/angular-scrollie.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/joelmukuthu/angular-scrollie.svg?branch=master)](https://travis-ci.org/joelmukuthu/angular-scrollie) [![Dependency Status](https://david-dm.org/joelmukuthu/angular-scrollie.svg)](https://david-dm.org/joelmukuthu/angular-scrollie) [![Licence](https://img.shields.io/npm/l/angular-scrollie.svg)](https://github.com/joelmukuthu/angular-scrollie/blob/master/LICENSE.md) [![Coverage Status](https://coveralls.io/repos/github/joelmukuthu/angular-scrollie/badge.svg?branch=master)](https://coveralls.io/github/joelmukuthu/angular-scrollie?branch=master) [![Bower version](https://img.shields.io/bower/v/angular-scrollie.svg)](https://github.com/joelmukuthu/angular-scrollie) [![npm version](https://img.shields.io/npm/v/angular-scrollie.svg)](https://www.npmjs.com/package/angular-scrollie)
 
+## UPDATE 2020-04-14: Archived
+
+This project still works as is but is no longer maintained.
+
+---
+
 angular-scrollie exposes a service that allows you to set or animate the `scrollTop`
 of an angular element. Uses `requestAnimationFrame` to provide smooth animations
 and even polyfills it for old browsers.
